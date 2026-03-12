@@ -82,6 +82,8 @@ function generateAccessToken(user) {
     { expiresIn: ACCESS_EXPIRES_IN }
   );
 }
+// expiresIn: ACCESS_EXPIRES_IN - это TTL (время жизни) accessToken - задаем в AuthGwt.js
+//const ACCESS_EXPIRES_IN = process.env.ACCESS_EXPIRES_IN || "15m";
 
 function generateRefreshToken(user) {
   return jwt.sign(
@@ -90,6 +92,9 @@ function generateRefreshToken(user) {
     { expiresIn: REFRESH_EXPIRES_IN }
   );
 }
+// expiresIn: REFRESH_EXPIRES_IN - это TTL (время жизни) refreshToken - задаем в AuthGwt.js
+// const REFRESH_EXPIRES_IN = process.env.REFRESH_EXPIRES_IN || "7d"; 
+
 
 /**
  * @swagger
